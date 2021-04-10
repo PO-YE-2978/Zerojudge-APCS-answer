@@ -1,0 +1,15 @@
+a=input().split(' ')
+n=int(a[0])
+d=int(a[1])
+quantity=0
+total_price=0
+
+price=[[] for i in range(n)]
+
+for i in range(n):
+    price[i]=list(map(int,input().split(' ')))
+    if max(price[i])-min(price[i]) >= d:
+        quantity += 1
+        total_price += int((price[i][0]+price[i][1]+price[i][2])/3)
+
+print('{} {}'.format(quantity,total_price))
