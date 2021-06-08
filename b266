@@ -1,0 +1,43 @@
+def a0(x):
+    y=[[0 for i in range(len(x))] for i in range(len(x[0]))]
+    for i in range(len(x[0])):
+        for j in range(len(x)):
+            y[i][j]=x[j][i]
+    a1(y)
+    return y
+
+def a1(x):
+    for i in range(len(x)-1,-1,-1):
+        if len(x)-i-1 >= i:
+            break
+        temp=x[i]
+        x[i]=x[len(x)-i-1]
+        x[len(x)-i-1]=temp
+    return(x)
+    
+a=input().split(' ')
+x=[[0 for i in range(int(a[1]))] for i in range(int(a[0]))]
+for i in range(int(a[0])):
+    v=input().split(' ')
+    for j in range(int(a[1])):
+        x[i][j]=v[j]
+b=input().split(' ')
+
+for i in range(len(b)-1,-1,-1):
+    if b[i] == '0':
+        x=a0(x)
+    elif b[i] == '1':
+        x=a1(x)
+    #print(x)
+        
+print(str(len(x))+' '+str(len(x[0])))
+for i in x:
+    p=''
+    q=''
+    for j in range(len(i)):
+        p+=str(i[j])+' '
+    for k in range(len(p)-1):
+        q+=p[k]
+    print(p)
+    del p
+    del q
