@@ -1,0 +1,36 @@
+a=list(map(int,input().split(' ')))
+c=0
+if a[0]==0 :
+    if a[1] == 0:
+        if a[2]==0:
+            print("AND")
+            print("OR")
+            print("XOR")
+            c+=1
+    if a[1] != 0:
+        if a[2]==0:
+            print("AND")
+            c+=1
+        elif a[2]==1:
+            print("OR")
+            print("XOR")
+            c+=1
+elif a[0]!=0 :
+    if a[1] == 0:
+        if a[2]==0:
+            print("AND")
+            c+=1
+        if a[2]!=0:
+            print("OR")
+            print("XOR")
+            c+=1
+    if a[1] != 0:
+        if a[2]==0:
+            print("XOR")
+            c+=1
+        elif a[2]==1:
+            print("AND")
+            print("OR")
+            c+=1
+if c==0:
+    print("IMPOSSIBLE")
