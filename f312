@@ -1,0 +1,11 @@
+a=list(map(int,input().split(' ')))
+b=list(map(int,input().split(' ')))
+n=int(input())
+y1=0
+y2=0
+s=-1000#看答案後才打算由-1000開始
+for i in range(n+1):
+    y1=a[0]*(i**2)+a[1]*i+a[2]
+    y2=b[0]*((n-i)**2)+b[1]*(n-i)+b[2]
+    s=max(s,y1+y2)
+print(s)
