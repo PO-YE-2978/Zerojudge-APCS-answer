@@ -1,0 +1,36 @@
+a=int(input())
+b=input().split(' ')
+c=list(map(int,b))
+d=sorted(c)
+
+s=''
+t=''
+for i in range(a):
+    s=s+str(d[i])+' '
+for i in range(len(s)-1):
+    t=t+s[i]
+print(t)
+x=0
+for i in range(a):
+    if min(d)>=60:
+        print('best case')
+        x+=1
+        break
+    if d[i]>=60:
+        print(d[i-1])
+        x+=1
+        break
+if x==0:
+    print(max(d))
+y=0
+for i in range(a):
+    if max(d)<60:
+        print('worst case')
+        y+=1
+        break
+    if d[i]>=60:
+        print(d[i])
+        y+=1
+        break
+if y==0:
+    print(min(d))
