@@ -1,0 +1,23 @@
+a=list(map(int,input().split(' ')))
+b=list(map(int,input().split(' ')))
+c=list(map(int,input().split(' ')))
+d=list(map(int,input().split(' ')))
+a1=0
+b1=0
+c1=0
+d1=0
+for i in range(4):
+    a1+=a[i]
+    b1+=b[i]
+print("{}:{}".format(a1,b1))
+for i in range(4):
+    c1+=c[i]
+    d1+=d[i]
+print("{}:{}".format(c1,d1))
+
+if a1>b1 and c1>d1:
+    print("Win")
+elif a1<b1 and c1<d1:
+    print("Lose")
+else:
+    print("Tie")
